@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biuro podróży</title>
+</head>
+<body>
+
+<h1>Witamy na stronie biura podróży XD</h1>
+
+<!-- zawsze aktywne linki do wszystkich kategorii -->
+{% for kat in kategorie  %}
+<p><a href = "kategoria/{{ kat.id }}">{{ kat.nazwa }}</a> </p>
+{% endfor %}
+
+</body>
+</html>
