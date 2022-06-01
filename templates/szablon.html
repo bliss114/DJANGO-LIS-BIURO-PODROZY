@@ -1,17 +1,54 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Biuro podróży</title>
 </head>
+
+<style>
+    body {background-color: white; font-family: 'Segoe UI'; color:#004080}
+    h1 {}
+    p {}
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: white}
+</style>
+
 <body>
+    <div>
+        <div style="float:left; width: 20 px; margin: 5 px; display: inline-block; object-fit: contain;">
+             <img src="{% static 'media/LOGO-PALMAPODROZE.png' %}">
+        </div>
+        <div style="float:left display: inline-block;">
+            <h1>PALMA PODRÓŻE</h1></div>
+        </div>
 
-<h1>Witamy na stronie biura podróży XD</h1>
+    <div style="clear:both"></div>
 
-<!-- zawsze aktywne linki do wszystkich kategorii -->
-{% for kat in kategorie  %}
-<p><a href = "kategoria/{{ kat.id }}">{{ kat.nazwa }}</a> </p>
-{% endfor %}
+    <div style="width:200px; float:left">
+        <h3>KATEGORIE</h3>
+        <!-- zawsze aktywne linki do wszystkich kategorii -->
+        {% for kat in kategorie  %}
+        <p><a href = "/kategoria/{{ kat.id }}">{{ kat.nazwa }}</a> </p>
+        {% endfor %}
+    </div>
+
+    <div style="width:800px; float:left">
+        {% block wycieczka %}   {% endblock wycieczka %}
+    </div>
+
+    <div style="clear:both"></div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Bartłomiej Lis, 2022. Strona wykonana na zajęcia.</p>
+    </div>
 
 </body>
 </html>

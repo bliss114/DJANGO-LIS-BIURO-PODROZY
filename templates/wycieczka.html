@@ -1,0 +1,11 @@
+    {% extends 'szablon.html' %}
+
+    {% block wycieczka %}
+    {% if wycieczka_user %}
+        <h1>{{ wycieczka_user.nazwa }}</h1>
+        <p> {{ wycieczka_user.opis }}</p>
+        <p> {{ wycieczka_user.cena }}</p>
+    {% else %}
+        <p>Nie ma wycieczki o takim id.</p>
+    {% endif %}
+    {% endblock wycieczka %}

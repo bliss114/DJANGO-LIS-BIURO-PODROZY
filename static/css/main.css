@@ -1,0 +1,14 @@
+    body {background-color: white; font-family: 'Segoe UI'; color:#004080}
+
+    h1 {}
+
+    p {}
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background-color: white
+        }

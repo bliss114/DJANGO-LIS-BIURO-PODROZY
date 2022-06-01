@@ -1,0 +1,15 @@
+{% extends 'szablon.html' %}
+
+    {% block wycieczka %}
+
+    {% if kategoria_wycieczka %}
+
+        {% for wycieczka in kategoria_wycieczka %}
+            <p><a href = "/wycieczka/{{ wycieczka.id }}/"> {{ wycieczka.nazwa }} </a> </p>
+
+        {% endfor %}
+    {% else %}
+
+    {% endif %}
+
+    {% endblock wycieczka %}

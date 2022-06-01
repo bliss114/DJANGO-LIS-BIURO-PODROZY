@@ -18,11 +18,15 @@ def index(request):
 
 def kategoria (request, id):
     kategoria_user = Kategoria.objects.get(pk=id)
-    return HttpResponse(kategoria_user.nazwa)
+    kategoria_wycieczka = Wycieczki.objects.filter(kategoria = kategoria_user)
+    kategorie = Kategoria.objects.all()
+    dane = {'kategoria_user' : kategoria_user,
+            'kategoria_wycieczka' : kategoria_wycieczka,
+            'kategorie' : kategorie}
+    return render(request, 'kategoria_produkt.html', dane)
 
 def wycieczka (request, id):
     wycieczka_user = Wycieczki.objects.get(pk=id)
-    napis = "<h1>" + str(wycieczka_user) + "</h1>" + \
-            "<p>" + str(wycieczka_user.opis) + "</p>" + \
-            "<p>" + str(wycieczka_user.cena) + "</p>"
-    return HttpResponse(napis)
+    kategorie = Kategoria.objects.all()
+    dane = {'wycieczka_user' : wycieczka_user, 'kategorie': kategorie}
+    return render(request, 'wycieczka.html', dane)
